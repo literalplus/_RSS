@@ -26,7 +26,7 @@ $_RPAGE = $_GET['page'];
 } else {
 $_RPAGE = "settings";
 }
-require_once _RSS_ICL."Admin.class.php";
+require_once "includes/_Admin.class.php";
 $Admin = new _Admin($_RPAGE);
 if (!checkrights("_RSS") || !defined("iAUTH") || $_GET['aid'] != iAUTH) { redirect("../../index.php"); }
 //end
