@@ -76,13 +76,24 @@ $temp22 .= "news_visibility='".$thing."' OR ";
 
 }
 $temp22 .= "news_viibility='0'";
-$newsresult = dbquery("SELECT * FROM ".DB_NEWS." WHERE (".$temp22.") LIMIT 10 ORDER BY news_datestamp ASC");
+$newsresult = dbquery("SELECT * FROM ".DB_NEWS." WHERE (".$temp22.") LIMIT 10 ORDER BY news_id");
+$i=0;
 while($data = dbarray($newsresult)){
 echo'<item>
 <title>'.phpentities($newsresult['news_subject']).'</title>
 <link>'.$settings['siteurl'].'news.php?readmore='.$newsresult['news_id'].'</link>
 <description>'.phpentities($newsresult['news_news']).'</description>
 </item>';
+$i++;
+}
+if($i==0){
+
+echo'<item>
+<title>Keine News vorhanden!</title>
+<link>'.$settings['siteurl'].'news.php</link>
+<description>Es wurden keine News erstellt.</description>
+</item>';
+
 }
 
 
