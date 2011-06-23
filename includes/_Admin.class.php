@@ -68,7 +68,11 @@ echo'</tr></table>';
 }
 public function SaveSettings(){
 
-//TODO
+$edit = dbquery("UPDATE ".DB_RSS_SETTINGS." SET setting='".$_POST['showcopy']."' WHERE name='showcopy'");
+$edit = dbquery("UPDATE ".DB_RSS_SETTINGS." SET setting='".$_POST['rss_site_name']."' WHERE name='rss_site_name'");
+$edit = dbquery("UPDATE ".DB_RSS_SETTINGS." SET setting='".$_POST['rss_site_link']."' WHERE name='rss_site_link'");
+$edit = dbquery("UPDATE ".DB_RSS_SETTINGS." SET setting='".$_POST['rss_desc']."' WHERE name='rss_desc'");
+$edit = dbquery("UPDATE ".DB_RSS_SETTINGS." SET setting='".$_POST['rss_img']."' WHERE name='rss_img'");
 $_RSS::ReNewSettings();
 
 }
@@ -93,7 +97,7 @@ private function MakeBigTextInput($name,$variable="0"){
 if($variable == "0"){
 $set="";
 } else {
-$set=" placeholder=\"".$variable."\"";
+$set=" value=\"".$variable."\"";
 }
 echo'<textarea class="textbox" rows="50" cols="20" name="'.$name.'"'.$set.'></textarea>';
 
@@ -104,7 +108,7 @@ private function MakeTextInput($name,$variable="0"){
 if($variable == "0"){
 $set="";
 } else {
-$set=" placeholder=\"".$variable."\"";
+$set=" value=\"".$variable."\"";
 }
 echo'<input type="text" class="textbox" name="'.$name.'"'.$set.' />';
 
