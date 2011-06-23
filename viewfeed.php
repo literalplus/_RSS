@@ -87,7 +87,7 @@ echo'<item>
 $i++;
 }
 if($i==0){
-
+//nichts
 echo'<item>
 <title>Keine News vorhanden!</title>
 <link>'.$settings['siteurl'].'news.php</link>
