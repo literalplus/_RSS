@@ -34,8 +34,8 @@ add_to_title("&#187;_RSS Administration&#187;".$this->getSiteName());
 }
 
 private function getSiteName(){
-
-switch($Page){
+global $_Admin;
+switch($_Admin->Page){
 
 case "settings":
 return "Einstellungen";
@@ -53,22 +53,18 @@ return "Einstellungen";
 }
 
 public function Menue(){
-
+global $_Admin;
 opentable("_RSS - Administration - Navigation");
 
-_Admin::AdminMenu();
+echo'<table><tr>';
+echo'<td class="'.($_Admin->Page == "settings") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
+//echo'<td class="'.($this->Page == "seo") ? "tbl2" : "tbl1".'">SEO</td>';
+echo'<td class="'.($Page == "feeds") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';
+echo'</tr></table>';
 
 closetable();
 }
 
-private function AdminMenu(){
-
-echo'<table><tr>';
-echo'<td class="'.($Page == "settings") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
-//echo'<td class="'.($this->Page == "seo") ? "tbl2" : "tbl1".'">SEO</td>';
-echo'<td class="'.($Page == "feeds") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';
-echo'</tr></table>';
-}
 public function SaveSettings(){
 global $_POST;
 
