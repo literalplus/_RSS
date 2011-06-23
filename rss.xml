@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<rss version="0.91">
+<channel>
+<!--PHP RSS FEEDS!!!! !-->
+<title>_RSS</title>
+<link>http://xxyy.bplaced.net/</link>
+<description>_RSS Infusion fuer PHP-Fusion by xxyy</description>
+<language>de-de</language>
+<copyright>2011 - xxyy</copyright>
+<image>
+<title>_RSS Infusion by xxyy</title>
+<url>images/rss_logo.png</url>
+<link>http://xxyy.bplaced.net/</link>
+</image>
+
+<item>
+<title>Die _RSS Infusion ist nicht konfiguriert!</title>
+<link></link>
+<description>Bitte konfiguriere die Infusion, da diese Seite sonst immer so bleiben wird ;)</description>
+</item>
+
+<item>
+<title>_RSS Infusion</title>
+<link>http://xxyy.bplaced.net/</link>
+<description>Diese Infusion wurde entwickelt von xxyy.
+http://xxyy.bplaced.net/
+mailto:xxyy98@gmail.com
+Quellen &amp; Hilfen:
+RSS Tutorial: http://www.homepage-total.de/tipps/rssfeed_erstellen.php
+RSS Logo: http.//feedicons.com/</description>
+</item>
+
+</channel>
+</rss>
