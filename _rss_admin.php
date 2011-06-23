@@ -42,7 +42,8 @@ if (file_exists(INFUSIONS."infusion_folder/locale/".$settings['locale'].".php"))
 $Admin::Menue();
 
 if($_RPAGE == "settings"){
-if(isset($_POST['settings'])){
+if(isset($_GET['save'])){
+$Admin::SaveSettings();
 echo'<div class="admin-message">Einstellungen gespeichert.</div>';
 }
 opentable("_RSS - Administration - Einstelleungen");
