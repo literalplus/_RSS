@@ -39,11 +39,11 @@ if (file_exists(INFUSIONS."infusion_folder/locale/".$settings['locale'].".php"))
 	include INFUSIONS."infusion_folder/locale/English.php";
 }*/
 
-$Admin::Menue();
+$Admin->Menue();
 
 if($_RPAGE == "settings"){
 if(isset($_GET['save'])){
-$Admin::SaveSettings();
+$Admin->SaveSettings();
 echo'<div class="admin-message">Einstellungen gespeichert.</div>';
 }
 opentable("_RSS - Administration - Einstelleungen");

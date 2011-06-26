@@ -21,12 +21,11 @@
 
 class _Admin {//admin funktionen
 
-public $AdminPanel = true;
 public $Page;
+
 
 public function __construct($page="settings"){
 
-$this->AdminPanel=true;
 $this->Page=$page;
 
 add_to_title("&#187;_RSS Administration&#187;".$this->getSiteName());
@@ -34,8 +33,7 @@ add_to_title("&#187;_RSS Administration&#187;".$this->getSiteName());
 }
 
 private function getSiteName(){
-global $_Admin;
-switch($_Admin->Page){
+switch($this->Page){
 
 case "settings":
 return "Einstellungen";
@@ -51,15 +49,16 @@ return "Einstellungen";
 }
 
 }
-
-public function Menue(){
-global $_Admin;
+public function  Menue(){
+$this->Menue2();
+}
+private function Menue2(){
 opentable("_RSS - Administration - Navigation");
 
 echo'<table><tr>';
-echo'<td class="'.($_Admin->Page == "settings") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
+echo'<td class="'.(($this->Page == "settings") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
 //echo'<td class="'.($this->Page == "seo") ? "tbl2" : "tbl1".'">SEO</td>';
-echo'<td class="'.($Page == "feeds") ? "tbl2" : "tbl1".'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';
+echo'<td class="'.(($this->Page == "feeds") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';
 echo'</tr></table>';
 
 closetable();
