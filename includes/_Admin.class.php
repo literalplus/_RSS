@@ -56,9 +56,9 @@ private function Menue2(){
 opentable("_RSS - Administration - Navigation");
 
 echo'<table width="100%" class="noborder"><tr>';
-echo'<td class="'.(($this->Page == "settings") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
+echo'<td class="'.(($this->Page == "settings") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&amp;page=settings">Einstellungen</a></td>';
 //echo'<td class="'.($this->Page == "seo") ? "tbl2" : "tbl1".'">SEO</td>';
-echo'<td class="'.(($this->Page == "feeds") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';
+echo'<td class="'.(($this->Page == "feeds") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&amp;page=settings">Feeds</a></td>';
 echo'</tr></table>';
 
 closetable();
@@ -77,16 +77,16 @@ $_RSS::ReNewSettings();
 }
 
 public function RenderSettings($formname="ReanderSettings"){
-global $settings;
+global $settings,$rsss;
 
-echo'Willkommen in der Administration von _RSS.Hier können einige Einstellungen vorgenommen werden:<br />';
-echo'<form name="RenderSettingsForm" action="_rss_admin.php?aid='.iAUTH.'&page=settings&save=NqUr786TRs5g" method="post">';
+echo'Willkommen in der Administration von _RSS.Hier k&ouml;nnen einige Einstellungen vorgenommen werden:<br />';
+echo'<form name="RenderSettingsForm" action="_rss_admin.php?aid='.iAUTH.'&amp;page=settings&amp;save=NqUr786TRs5g" method="post">';
 echo'<table class="noborder" width="100%">';
-echo'<tr><td>Einstellung</td><td>Aktueller Wert</td><td>Ändern</td></tr>';
+echo'<tr><td>Einstellung</td><td>Aktueller Wert</td><td>&Auml;ndern</td></tr>';
 echo'<tr class="tbl1"><td>Zeige Copyright (&raquo;)?</td><td>'.$rsss['showcopy'].'</td><td>'.$this->MakeYNSelect("showcopy").'</td></tr>';
-echo'<tr class="tbl1"><td>Seitenname im RSS-Feed:</td><td>'.$rsss['rss_site_name'].'</td><td>'.$this->MakeTextInput("rss_site_name",$rsss['rss_site_name']).'</td></tr>';
+echo'<tr class="tbl2"><td>Seitenname im RSS-Feed:</td><td>'.$rsss['rss_site_name'].'</td><td>'.$this->MakeTextInput("rss_site_name",$rsss['rss_site_name']).'</td></tr>';
 echo'<tr class="tbl1"><td>Seitenlink im RSS-Feed:</td><td>'.$rsss['rss_site_link'].'</td><td>'.$this->MakeTextInput("rss_site_link",$rsss['rss_site_link']).'</td></tr>';
-echo'<tr class="tbl1"><td>Kurzbeschreibung der Seite im RSS-Feed:</td><td>'.$rsss['rss_desc'].'</td><td>'.$this->MakeBigTextInput("rss_desc",$rsss['rss_desc']).'</td></tr>';
+echo'<tr class="tbl2"><td>Kurzbeschreibung der Seite im RSS-Feed:</td><td>'.$rsss['rss_desc'].'</td><td>'.$this->MakeBigTextInput("rss_desc",$rsss['rss_desc']).'</td></tr>';
 echo'<tr class="tbl1"><td>Seitenbild im RSS-Feed (Ordner INFUSIONS/_rss_panel/images/):</td><td>'.$rsss['rss_img'].'</td><td>'.$this->MakeTextInput("rss_img",$rsss['rss_img']).'</td></tr>';
 echo'</table></form>';
 
@@ -99,7 +99,7 @@ $set="";
 } else {
 $set=" value=\"".$variable."\"";
 }
-echo'<textarea class="textbox" rows="50" cols="20" name="'.$name.'"'.$set.'></textarea>';
+echo'<textarea class="textbox" rows="5" cols="20" name="'.$name.'"'.$set.'></textarea>';
 
 }
 
