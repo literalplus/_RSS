@@ -55,7 +55,7 @@ $this->Menue2();
 private function Menue2(){
 opentable("_RSS - Administration - Navigation");
 
-echo'<table><tr>';
+echo'<table width="100%" class="noborder"><tr>';
 echo'<td class="'.(($this->Page == "settings") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Einstellungen</a></td>';
 //echo'<td class="'.($this->Page == "seo") ? "tbl2" : "tbl1".'">SEO</td>';
 echo'<td class="'.(($this->Page == "feeds") ? "tbl2" : "tbl1").'"><a href="'._RSS.'_rss_admin.php?aid='.iAUTH.'&page=settings">Feeds</a></td>';

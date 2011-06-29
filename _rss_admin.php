@@ -48,7 +48,7 @@ echo'<div class="admin-message">Einstellungen gespeichert.</div>';
 }
 opentable("_RSS - Administration - Einstelleungen");
 
-
+$Admin->RenderSettings();
 
 closetable();
 
