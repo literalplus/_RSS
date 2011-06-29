@@ -46,7 +46,7 @@ if(isset($_GET['save'])){
 $Admin->SaveSettings();
 echo'<div class="admin-message">Einstellungen gespeichert.</div>';
 }
-opentable("_RSS - Administration - Einstelleungen");
+opentable("_RSS - Administration - Einstellungen");
 
 $Admin->RenderSettings();
 
