@@ -94,24 +94,24 @@ echo'</table></form>';
 
 private function MakeBigTextInput($name,$variable="0"){
 
-if($variable == "0"){
+if($variable == "0" || $variable == ""){
 $set="";
 } else {
 $set=" value=\"".$variable."\"";
 }
-echo'<textarea class="textbox" rows="5" cols="20" name="'.$name.'"'.$set.'></textarea>';
-
+$ta='<textarea class="textbox" rows="5" cols="20" name="'.$name.'"'.$set.'></textarea>';
+return $ta;
 }
 
 private function MakeTextInput($name,$variable="0"){
 
-if($variable == "0"){
+if($variable == "0"|| $variable == ""){
 $set="";
 } else {
 $set=" value=\"".$variable."\"";
 }
-echo'<input type="text" class="textbox" name="'.$name.'"'.$set.' />';
-
+$ti='<input type="text" class="textbox" name="'.$name.'"'.$set.' />';
+return $ti;
 }
 
 private function MakeYNSelect($name) {
