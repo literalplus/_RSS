@@ -99,7 +99,7 @@ $set="";
 } else {
 $set=" value=\"".$variable."\"";
 }
-$ta='<textarea class="textbox" rows="5" cols="20" name="'.$name.'"'.$set.'></textarea>';
+$ta='<textarea class="textbox" rows="5" cols="17" name="'.$name.'"'.$set.'></textarea>';
 return $ta;
 }
 
